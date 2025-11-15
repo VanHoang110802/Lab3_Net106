@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Lab3_Net106.Data;
 using Lab3_Net106.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Lab3_Net106.Controllers
 {
@@ -43,7 +44,7 @@ namespace Lab3_Net106.Controllers
         }
 
         // PUT: api/Products/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [Authorize(Roles = "Admin")]
         [HttpPut("{id}")]
         public async Task<IActionResult> PutProduct(int id, Product product)
         {
@@ -74,7 +75,7 @@ namespace Lab3_Net106.Controllers
         }
 
         // POST: api/Products
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public async Task<ActionResult<Product>> PostProduct(Product product)
         {
@@ -85,6 +86,7 @@ namespace Lab3_Net106.Controllers
         }
 
         // DELETE: api/Products/5
+        [Authorize(Roles = "Admin")]
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteProduct(int id)
         {
