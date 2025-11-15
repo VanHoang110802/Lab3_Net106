@@ -1,0 +1,6 @@
+@Lab3_Net106_HostAddress = http://localhost:5208
+
+GET {{Lab3_Net106_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
