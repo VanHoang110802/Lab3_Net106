@@ -12,5 +12,6 @@ namespace Lab3_Net106.Data
         // Các DbSet tương ứng với bảng
         public DbSet<Product> Products { get; set; }
         public DbSet<Category> Categories { get; set; }
+        public DbSet<User> Users { get; set; }
     }
 }
